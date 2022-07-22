@@ -14,7 +14,8 @@ To run 2_component set:
 2) (Optional) The receptor models are provided for Cannabinoid CB2 receptor. If you wish to run screening for another receptor, delete all files in run/ subdirectory and put your ICM docking maps files (.map, .dtb etc) there instead.
 3) in terminal, cd to the local directory
 4) check variable icmhome_1 in the text file input_VSYNTHES.in to be the same as the ICM version used on your machine, update if needed (the scripts were tested with ICM-Pro+VLS Version 3.9-2b)
-5) execute the docking launcher script: $ICMHOME/icm64 docking_launcher.icm
+5) execute the index generation script: $ICMHOME/icm64 indexer.icm. This index file will be used in the step 6).
+6) execute the docking launcher script: $ICMHOME/icm64 docking_launcher.icm
 Once the docking is completed (about an hour using an 8-core computer for this example), analyze results of MEL:
 6) in the local folder above run/, execute ICM script icm_load_hits_enamine_REAL.icm: $ICMHOME/icm64 icm_load_hits_enamine_REAL.icm. This will generate .icb file with all hits: run/processing_files/DOCKINGPROJNAME_first_iter.icb. 
 7) run enumeration script icm_enumerate_REAL_frags.icm. Once done, a directory run/processing_files/enumerated_best_frags_RECEPTORNAME_300000/ will appear with the .sdf files of enumerated best fragments
